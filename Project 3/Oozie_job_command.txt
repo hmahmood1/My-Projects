@@ -1,0 +1,6 @@
+oozie job --oozie http://quickstart.cloudera:11000/oozie \
+-D oozie.wf.application.path /user/cloudera/Project2_P5/workflowCopy6/workflowCopy6.xml \
+-config jobProject2_P5.properties \
+-run
+
+-info0000000-190719115406508-oozie-oozi-W
