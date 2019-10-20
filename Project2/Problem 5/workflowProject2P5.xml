@@ -1,0 +1,33 @@
+<workflow-app name="oozie-lab" xmlns="uri:oozie:workflow:0.4">
+    <!-- Start Control Node -->
+    <start to="hive-store-select" />
+
+
+    <!-- Hive store as select -->
+    <action name="hive-store-select">
+        <hive xmlns="uri:oozie:hive-action:0.4">
+            <job-tracker>${job_tracker}</job-tracker>
+            <name-node>${name_node}</name-node>
+
+
+            <!-- Set up a connection to Hive Metastore -->
+
+            <configuration>
+                     <property>
+                              <name>hive.metastore.uris</name>
+                                    <value>thrift://localhost:9083</value>
+                    </property>
+           </configuration>
+
+           <script>${scripts_location}/Problem5HiveOozieSQL.sql</script>
+        </hive>
+        <ok to="end"/>
+        <error to="kill"/>
+        </action>
+
+        <!-- Kill job control node -->
+        <kill name="kill">
+
+        <!-- End job control node -->
+        <end name="end" />
+<workflow-app>

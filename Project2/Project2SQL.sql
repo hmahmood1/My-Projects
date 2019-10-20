@@ -1,0 +1,11 @@
+-- Project 2 Problem 2 SQL queries --
+
+USE UN_POPULATION_STATS;
+
+SELECT * FROM FINAL_VIEWP2;
+
+-- Project 2 Problem 4 SQL queries --
+
+USE UN_POPULATION_STATS;
+
+SELECT * FROM FINAL_VIEWP4;
